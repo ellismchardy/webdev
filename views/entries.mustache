@@ -36,17 +36,31 @@ Add an Event
 {{/user}}
 
 {{#entries}}
+
 <div class="card">
   <div class="card-body">
-    <h4 class="card-title">{{subject}}</h4>
+    <h4 class="card-title">{{eventTitle}}</h4>
     <p class="card-text">
-      {{contents}}
+      {{eventPrice}}
      </p>
+
+     <p class="card-text">
+      {{eventDate}}
+     </p>
+
+     <p class="card-text">
+      {{contactNumber}}
+     </p>
+
+
 <div class="card-footer">
-Written by <a href="/posts/{{author}}">{{author}}</a> , on {{published}}
+Published by <a href="/posts/{{author}}">{{author}}</a> , on {{published}}
 </div>
 </div>
 {{/entries}}
+
+
+
 
 {{^entries}}
 No entries yet.

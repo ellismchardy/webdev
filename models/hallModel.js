@@ -11,8 +11,10 @@ class communityHall {
     //a function to seed the database
 init() {
     this.db.insert({
-    subject: 'I liked the exhibition',
-    contents: 'nice',
+    eventTitle: 'Circus Show',
+    eventPrice: '£15 Adults £5 Children',
+    eventDate: '2023-08-22',
+    contactNumber: '07369 226536',
     published: '2020-02-16',
     author: 'Peter'
     });
@@ -20,9 +22,11 @@ init() {
     console.log('db entry Peter inserted');
     
     this.db.insert({
-    subject: "Didn't like it",
-    contents: 'A really terrible style!',
-    published: '2020-02-18',
+    eventTitle: 'Dancing Show',
+    eventPrice: '£18 Adults £10 Children',
+    eventDate: '2023-09-22',
+    contactNumber: '07369 226536',
+    published: '2020-02-16',
     author: 'Ann'
     });
     //for later debugging
@@ -69,8 +73,10 @@ getAllEntries() {
 addEntry(author, subject, contents) {
             var entry = {
             author: author,
-            subject: subject,
-            contents: contents,
+            eventTitle: eventTitle,
+            eventPrice: eventPrice,
+            eventDate: new Date().toISOString().split('T')[0],
+            contactNumber: contactNumber,
             published: new Date().toISOString().split('T')[0]
             }
             console.log('entry created', entry);

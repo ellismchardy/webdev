@@ -38,7 +38,7 @@ exports.post_new_entry = function(req, res) {
         response.status(400).send("Entries must have an author.");
     return;
     }
-    db.addEntry(req.body.author, req.body.subject, req.body.contents);
+    db.addEntry(req.body.author, req.body.eventTime, req.body.eventPrice, req.body.eventDate, req.body.contactNumber, req.body.published);
     res.redirect('/');
 }
 
@@ -52,7 +52,7 @@ exports.peters_entries = function(req, res) {
         db.getEntriesByUser(user)
         .then((entries) => {
             res.render('entries', {
-                'title': 'Guest Book',
+                'title': 'Community Hall',
                 'user': req.user,
                 'entries': entries
             });
