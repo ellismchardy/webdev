@@ -1,0 +1,55 @@
+<html><head>
+{{>header}}
+</head>
+<body>
+<h1>{{title}}</h1>
+<div class="text-right" style="margin-bottom: 1em;">
+
+
+
+{{^user}}
+  <a id="login" href="/login" class="btn btn-primary">
+    Log In
+  </a> 
+  
+  <a id="login" href="/register" class="btn btn-primary">
+    Sign Up
+  </a>
+{{/user}}
+
+
+
+{{#user}}
+  <a id="logout" href="/logout" class="btn btn-primary">
+    Log Out
+  </a>
+
+ 
+</div>
+
+<div class="text-right">
+<a href="/new" class="btn btn-primary">
+Add an Event
+</a>
+</div>
+
+{{/user}}
+
+{{#entries}}
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">{{subject}}</h4>
+    <p class="card-text">
+      {{contents}}
+     </p>
+<div class="card-footer">
+Written by <a href="/posts/{{author}}">{{author}}</a> , on {{published}}
+</div>
+</div>
+{{/entries}}
+
+{{^entries}}
+No entries yet.
+{{/entries}}
+</body>
+</html>
