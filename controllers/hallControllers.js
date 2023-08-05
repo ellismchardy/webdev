@@ -38,7 +38,7 @@ exports.post_new_entry = function(req, res) {
         response.status(400).send("Entries must have an author.");
     return;
     }
-    db.addEntry(req.body.author, req.body.eventTime, req.body.eventPrice, req.body.eventDate, req.body.contactNumber, req.body.published);
+    db.addEntry(req.body.author, req.body.eventTitle, req.body.eventPrice, req.body.eventDate, req.body.contactNumber);
     res.redirect('/');
 }
 

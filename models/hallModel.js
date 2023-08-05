@@ -70,12 +70,12 @@ getAllEntries() {
         })
         }
 
-addEntry(author, subject, contents) {
+addEntry(author, eventTitle, eventPrice, eventDate, contactNumber) {
             var entry = {
             author: author,
             eventTitle: eventTitle,
             eventPrice: eventPrice,
-            eventDate: new Date().toISOString().split('T')[0],
+            eventDate: new Date(eventDate).toISOString().split('T')[0],
             contactNumber: contactNumber,
             published: new Date().toISOString().split('T')[0]
             }
