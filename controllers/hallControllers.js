@@ -34,8 +34,7 @@ exports.show_new_entries = function (req, res) {
   })
 }
 
-// Update the post_new_entry function to include the recurrence parameter
-// Update the post_new_entry function to include the recurrence parameter
+
 exports.post_new_entry = function (req, res) {
   console.log('processing post-new_entry controller');
   if (!req.body.author) {
@@ -51,7 +50,6 @@ exports.post_new_entry = function (req, res) {
     req.body.eventPrice,
     req.body.eventDate,
     req.body.contactNumber,
-    req.body.recurrence  // Include the recurrence parameter from the form
   );
   res.redirect('/');
 }
@@ -84,15 +82,15 @@ exports.show_register_page = function (req, res) {
 
 exports.post_new_user = function (req, res) {
   const user = req.body.username;
-  const password = req.body.pass;
+  const password = req.body.password;
 
   if (!user || !password) {
-    res.send(401, 'no user or no password');
+    res.send(401, 'Username and password are required');
     return;
   }
   userDao.lookup(user, function (err, u) {
     if (u) {
-      res.send(401, "User exists:", user);
+      res.send(401, "User already exists:", user);
       return;
     }
     userDao.create(user, password);

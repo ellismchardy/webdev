@@ -15,7 +15,7 @@ class communityHall {
             eventType: 'Class',
             eventPrice: '£15 Adults £5 Children',
             eventDate: '2023-08-22',
-            contactNumber: '07369 226536',
+            contactNumber: '07369226536',
             published: '2020-02-16',
             author: 'Peter'
         });
@@ -25,7 +25,7 @@ class communityHall {
             eventType: 'Community',
             eventPrice: 'Free Entry',
             eventDate: '2023-08-19',
-            contactNumber: '07369 226536',
+            contactNumber: '07369226536',
             published: '2020-02-16',
             author: 'Ann'
         });
@@ -155,6 +155,22 @@ class communityHall {
             });
         });
     }
+
+    getEntryByDate(eventTitle) {
+        return new Promise((resolve, reject) => {
+          this.db.findOne({ eventDate }, (err, entry) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve(entry);
+            }
+          });
+        });
+      }
+
+
+
+
 
 }
 module.exports = communityHall;
