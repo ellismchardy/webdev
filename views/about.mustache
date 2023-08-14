@@ -1,0 +1,71 @@
+<html>
+<head>
+    {{>header}}
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="#">Harmony Hall</a></div>
+            <ul class="nav-items">
+                {{^user}}
+                <li> <a href="/">Home</a> </li>
+                <li> <a href="/about">About Us</a> </li>
+                <li> <a href="/availability">Availability</a> </li>
+                <li><a id="login" href="/login">Log In</a></li>
+                {{/user}}
+                {{#user}}
+                <li> <a href="/">Home</a> </li>
+                <li> <a href="/about">About Us</a> </li>
+                <li> <a href="/new">Add Event</a> </li>
+                <li><a href="/delete">Delete Event</a></li>
+                <li><a href="/edit">Edit Event</a></li>
+                <li><a href="/availability">Availability</a></li>
+                <li><a id="logout" href="/logout">Log Out</a></li>
+                <li><a id="register" href="/register">Register</a></li>
+                {{/user}}
+            </ul>
+        </div>
+    </nav>
+   
+
+<div class="about-container">
+
+<div class="about-section">
+
+    <h2 class="about-section-heading"> <strong>About Us</strong></h2>
+
+    <p class="pmargin"> Welcome to our community hub, a charming local hall nestled in the heart of our vibrant neighborhood. We are your go-to destination for a diverse array of regular classes and exciting ad-hoc events that cater to everyone's interests. Whether you're seeking a rejuvenating yoga session, getting groovy with dance, or breaking a sweat with fitness, our hall has something for everyone. </p>
+    <br> 
+    <p>Our hall is a gathering place for creativity, learning, and connection. We host a variety of public events that bring our community together, from clothing sales that showcase local fashion to table-top sales filled with unique treasures. Additionally, we provide a welcoming space for meetings, fostering collaboration and growth within our community. </p>
+</div> 
+
+</div> 
+
+<div class="home-container topaboutmargin">
+<div class="home-section">
+    <h3 class="about-section-title"> <strong> Explore, Learn, Connect </strong> </h3> 
+    <p> Our website is designed with you in mind. It's a platform where you can easily explore the scheduled classes and public events, giving you the opportunity to plan your activities and join in the fun. From fitness enthusiasts to art aficionados, there's always something happening at our hall, and you're invited to be a part of it.</p>
+</div>
+
+<div class="home-section">
+    <h3 class="about-section-title"> <strong> Private Hire </strong> </h3>
+    <p> Looking for the perfect venue for your special occasion? Look no further. Our hall is available for private hire, providing an intimate and flexible space for your events. Whether it's a birthday celebration, a small gathering, or a corporate event, our hall can be transformed to suit your needs. </p>
+</div> 
+
+<div class="home-section">
+    <h3 class="about-section-title"> <strong> Hall Availability </strong> </h3>
+    <p> We understand the importance of transparency when it comes to availability. That's why we make it easy for you to check when our hall is open for hire. You can view the hall's availability calendar <a href="/availability">here</a>, ensuring that you can plan your private events with confidence. </p>
+</div>
+
+<div class="home-section">
+    <h3 class="about-section-title"> <strong> Join Our Community </strong> </h3>
+    <p> We believe in the power of community, and we're thrilled to have you as part of ours. Whether you're a regular attendee of our classes, a visitor to our public events, or someone looking to host a private gathering, we're here to make your experience memorable and seamless.</p>
+    <p>Thank you for being a part of our journey. Let's create wonderful moments together at our local hall. See you soon! </p>
+</div>
+</div>
+
+
+   
+</body>
+</html>

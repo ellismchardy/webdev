@@ -1,0 +1,91 @@
+<html> 
+<head> 
+{{>header}}
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+
+<body> 
+
+<nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="#">Harmony Hall</a></div>
+            <ul class="nav-items">
+                {{^user}}
+                <li> <a href="/">Home</a> </li>
+                <li> <a href="/about">About Us</a> </li>
+                <li> <a href="/availability">Availability</a> </li>
+                <li><a id="login" href="/login">Log In</a></li>
+                {{/user}}
+                {{#user}}
+                <li> <a href="/">Home</a> </li>
+                <li> <a href="/about">About Us</a> </li>
+                <li> <a href="/new">Add Event</a> </li>
+                <li><a href="/delete">Delete Event</a></li>
+                <li><a href="/edit">Edit Event</a></li>
+                <li><a href="/availability">Availability</a></li>
+                <li><a id="logout" href="/logout">Log Out</a></li>
+                <li><a id="register" href="/register">Register</a></li>
+                {{/user}}
+            </ul>
+        </div>
+    </nav>
+
+<div class="about-container"
+<div class="about-section">
+    <h2 class="about-section-heading"> <strong>Add an Event</strong></h2>
+    <p> Fill in the fields below to add a new event. </p>
+</div>
+
+</div> 
+
+<div class="form-container">
+        <div class="form-content">
+            <form action="/new" method="POST">
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" class="form-control" id="author" name="author"
+                           placeholder="Written by {{user.user}}" value={{user.user}}>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventTitle">Event Title</label>
+                    <input type="text" class="form-control" id="eventTitle"
+                           name="eventTitle" placeholder="Enter Title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventType">Event Type</label>
+                    <select class="form-control" id="eventType" name="eventType" required>
+                        <option value="Class">Class</option>
+                        <option value="Private">Private</option>
+                        <option value="Community">Community</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventPrice">Event Pricing</label>
+                    <input type="text" class="form-control" id="eventPrice"
+                           name="eventPrice" placeholder="Enter Prices" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="eventDate">Event Date</label>
+                    <input type="text" class="form-control" id="eventDate" name="eventDate" 
+                           pattern="\d{4}-\d{2}-\d{2}" title="Please enter a date in the format YYYY-MM-DD" 
+                           min="1900-01-01" max="2099-12-31" placeholder="YYYY-MM-DD" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactNumber">Contact Number</label>
+                    <input type="text" class="form-control" id="contactNumber"
+                           name="contactNumber" placeholder="Enter Contact Number for this Event" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Add Entry</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
